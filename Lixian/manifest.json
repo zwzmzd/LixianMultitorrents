@@ -1,0 +1,32 @@
+{
+	"name": "Xunlei lixian Extension",
+	"version": "0.1",
+	"manifest_version": 2,
+	"description": "for .torrent links",
+	"background" : {
+		"scripts": ["background.js"],
+		"persistent": false
+	},
+	"page_action": {
+		"default_icon": "favicon.ico",
+		"default_title": "离线BT插件运行中"
+	},
+
+	"permissions": [
+		"tabs", "http://bt.ktxp.com/*"
+		],
+
+	"content_scripts": [ {
+		"exclude_globs": [  ],
+		"exclude_matches": [  ],
+		"include_globs": [ "http://dynamic.cloud.vip.xunlei.com/*" ],
+		"js": [ "jquery-1.8.2.min.js", "jquery.cookie.js", "contentscript.js" ],
+		"matches": [ "http://*/*", "https://*/*" ],
+		"run_at": "document_idle"
+	} ],
+	
+	"icons" : {
+    "48" : "aaa.png",
+    "128" : "sandwich-128.png"
+  }
+}
